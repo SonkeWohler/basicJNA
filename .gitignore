@@ -1,0 +1,17 @@
+#-- temporary files
+# vim
+*.sw[a-z]
+# linux
+*~
+
+#-- ide and other config files
+.idea/
+*.iml
+*.vim*
+
+#-- compiled files
+target/
+# c header files
+*.h
+# maven files
+dependency-reduced-pom.xml
