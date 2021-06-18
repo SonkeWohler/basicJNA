@@ -1,0 +1,64 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>sonki</groupId>
+  <artifactId>jna</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna-platform</artifactId>
+      <version>5.8.0</version>
+    </dependency>
+  </dependencies>
+
+  <!--><project>
+    <properties>
+    <maven.compiler.source>16.0.1</maven.compiler.source>
+    <maven.compiler.target>16.0.1</maven.compiler.target>
+    </properties>
+  </project></!-->
+
+  <properties>
+    <maven.compiler.release>16</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>sonki.jna.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin> 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
